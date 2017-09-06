@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="contain" style="display:none;margin:0 auto;text-align:center;">
+		<div style="margin: 0 auto; text-align: center;font: red;">是否开始答题？</div>
+		<div id="jixu"></div>
+	</div>
+	</body>
+	<script>
+		window.onload=function(){
+			if(confirm("确认开始答题？答题一旦开始，将不能退出。若退出，成绩无效且不能继续答题！"))
+ {
+ window.location.href="http://wx.scnjnews.com/kaoshi/webchat/webchat.php";
+ }else{
+ 	var contain=document.getElementById('contain');
+ 	contain.style.display="block";
+ 	var jixu=document.getElementById('jixu');
+ 	jixu.innerHTML="<a  href='http://wx.scnjnews.com/kaoshi/webchat/webchat.php'>点击开始答题！</a>"
+ }
+			
+		}
+	</script>
+</html>

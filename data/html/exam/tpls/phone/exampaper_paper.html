@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="无纸化模拟考试系统">
+<meta name="description" content="无纸化模拟考试系统">
+<meta name="keywords" content="无纸化模拟考试系统">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>网络安全答题系统</title>
+    <!--
+<link href="app/core/styles/css/bootstrap.css" rel="stylesheet">
+<link href="app/core/styles/css/moplugin.css" rel="stylesheet">
+<link href="app/user/styles/css/phone.css" rel="stylesheet" type="text/css" />
+<link href="app/core/styles/css/datetimepicker.css" rel="stylesheet">
+<script type="text/javascript" src="app/core/styles/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="app/exam/styles/css/mathquill.css" type="text/css">
+<script type="text/javascript" src="app/core/styles/js/jquery-ui.js"></script>
+<script type="text/javascript" src="app/core/styles/js/jquery.json.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="app/core/styles/js/swfu/swfupload.js"></script>
+<script type="text/javascript" src="app/core/styles/js/plugin.js"></script>
+ -->
+    <script src="app/core/styles/js/fastclick.js"></script>
+    <link rel="stylesheet" type="text/css" href="app/core/styles/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="app/core/styles/css/mskin.css" />
+    <script src="app/core/styles/js/jquery.min.js"></script>
+    <script src="app/core/styles/js/swiper.jquery.js"></script>
+    <script src="app/core/styles/js/jquery.json.js"></script>
+    <script src="app/core/styles/js/jquery.mobile.custom.min.js"></script>
+    <script src="app/core/styles/js/bootstrap.min.js"></script>
+    <script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+    <script src="app/core/styles/js/mplugin.js"></script>
+    <script src="app/exam/styles/js/mplugin.js"></script>
+
+</head><body>
+<div id="content">
+	<div class="pages" id="paper">
+		<style>
+
+			.selector label:last-child
+			{
+				display:none;
+			}
+		</style>
+		<!--
+		<header class="container-fluid" style="background-color:#337AB7;">
+
+			<h5 class="text-center">
+				<em style="font-size:2rem;" class="pull-left glyphicon glyphicon-chevron-left" onclick="javascript:$.goPrePage();"></em>
+				正式				<em style="font-size:2rem;" class="pull-right glyphicon glyphicon-home" onclick="javascript:$.goPage($('#page1'));"></em>
+			</h5>
+		</header>
+		-->
+		<div style="margin:0 auto;text-align: center;color: red;">进入答题后,请勿退出！</div>
+		<div class="container-fluid" style="margin-bottom:2.5rem;">
+			<div class="row-fluid">
+
+
+				<div class="col-xs-12" id="questionbar" style="display:none;">
+					<dl class="clear" id="questionindex">
+																																																																								<dt class="float_l"><h4 class="title">一、单选题</h4></dt>
+						<dd class="tableindex">
+										                			                			                							<a style="margin-bottom:0.5rem;" id="sign_1031" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1031');$('#form1').toggle();" class="btn btn-default">1</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_996" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('996');$('#form1').toggle();" class="btn btn-default">2</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1033" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1033');$('#form1').toggle();" class="btn btn-default">3</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1013" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1013');$('#form1').toggle();" class="btn btn-default">4</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1002" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1002');$('#form1').toggle();" class="btn btn-default">5</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1012" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1012');$('#form1').toggle();" class="btn btn-default">6</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1025" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1025');$('#form1').toggle();" class="btn btn-default">7</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_994" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('994');$('#form1').toggle();" class="btn btn-default">8</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1032" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1032');$('#form1').toggle();" class="btn btn-default">9</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1030" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1030');$('#form1').toggle();" class="btn btn-default">10</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_984" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('984');$('#form1').toggle();" class="btn btn-default">11</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_987" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('987');$('#form1').toggle();" class="btn btn-default">12</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1011" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1011');$('#form1').toggle();" class="btn btn-default">13</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_993" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('993');$('#form1').toggle();" class="btn btn-default">14</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1004" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1004');$('#form1').toggle();" class="btn btn-default">15</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1022" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1022');$('#form1').toggle();" class="btn btn-default">16</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1028" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1028');$('#form1').toggle();" class="btn btn-default">17</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_999" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('999');$('#form1').toggle();" class="btn btn-default">18</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1035" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1035');$('#form1').toggle();" class="btn btn-default">19</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1024" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1024');$('#form1').toggle();" class="btn btn-default">20</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_992" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('992');$('#form1').toggle();" class="btn btn-default">21</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_1007" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('1007');$('#form1').toggle();" class="btn btn-default">22</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_997" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('997');$('#form1').toggle();" class="btn btn-default">23</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_998" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('998');$('#form1').toggle();" class="btn btn-default">24</a>
+										                			                							<a style="margin-bottom:0.5rem;" id="sign_986" href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));gotoquestion('986');$('#form1').toggle();" class="btn btn-default">25</a>
+																				</dd>
+																																																																																																					</dl>
+				</div>
+				<form id="form1" name="form1" method="post" action="index.php?exam-phone-exampaper-score" class="col-xs-12" style="padding:0px;">
+					<input type="hidden" name="insertscore" value="1"/>
+																																								<h4 class="title questionpanel" id="questype_1">一、单选题</h4>
+						                	                	                					<div class="paperexamcontent" id="questions_1031" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第1题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1031');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1031',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1031">
+								<input id="time_1031" type="hidden" name="time[1031]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a><p>下列关于网络安全举报受理叙述正确的是（）。</p>						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	<p>A只有公安部门才可接受网络安全方面的举报B只有网信部门才可接受网络安全方面的举报C不属本部门职责的，先受理再移送</p>	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1031]" rel="1031" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1031]" rel="1031" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1031]" rel="1031" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1031]" rel="1031" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(1);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_996" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第2题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('996');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('996',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_996">
+								<input id="time_996" type="hidden" name="time[996]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>受到刑事处罚的网络运营者，（）不得从事网络安全管理和网络运营关键岗位的工作。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A五年内B十年内C终身	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[996]" rel="996" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[996]" rel="996" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[996]" rel="996" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[996]" rel="996" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(0);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(2);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1033" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第3题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1033');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1033',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1033">
+								<input id="time_1033" type="hidden" name="time[1033]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>2016年4月19日，习近平总书记在网络安全和信息化工作座谈会上指出，网络空间的竞争，归根结底是____竞争。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A人才B技术C资金投入D安全制度	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1033]" rel="1033" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1033]" rel="1033" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1033]" rel="1033" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1033]" rel="1033" value="D" />D </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1033]" rel="1033" value="E" />E </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(1);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(3);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1013" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第4题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1013');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1013',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1013">
+								<input id="time_1013" type="hidden" name="time[1013]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>违反《网络安全法》第二十七条规定，从事危害网络安全的活动，或者提供专门用于从事危害网络安全活动的程序、工具，或者为他人从事危害网络安全的活动提供技术支持、广告推广、支付结算等帮助，尚不构成犯罪的，由公安机关没收违法所得，处__日以下拘留，可以并处___以上___以下罚款。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A．三日 一万元 十万元 B．五日 五万元 十万元
+C．五日 五万元 五十万元 D．十日 五万元 十万元	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1013]" rel="1013" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1013]" rel="1013" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1013]" rel="1013" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1013]" rel="1013" value="D" />D </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1013]" rel="1013" value="E" />E </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(2);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(4);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1002" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第5题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1002');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1002',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1002">
+								<input id="time_1002" type="hidden" name="time[1002]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>《网络安全法》第二十一条规定，国家实行网络安全（）保护制度。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A.秘密B.等级C.设施	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1002]" rel="1002" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1002]" rel="1002" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1002]" rel="1002" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1002]" rel="1002" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(3);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(5);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1012" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第6题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1012');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1012',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1012">
+								<input id="time_1012" type="hidden" name="time[1012]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>因网络安全事件，发生突发事件或者生产安全事故的，应当依照（ ）等有关法律、行政法规的规定处置。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、《中华人民共和国安全生产法》B、《中华人民共和国治安管理法》C、《中华人民共和国网络安全法》	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1012]" rel="1012" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1012]" rel="1012" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1012]" rel="1012" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1012]" rel="1012" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(4);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(6);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1025" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第7题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1025');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1025',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1025">
+								<input id="time_1025" type="hidden" name="time[1025]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>我国哪部法律法规对禁止以计算机病毒或者其他方式攻击通信设施，危害网络安全和信息安全等行为作出了详细规定（）						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、《中华人民共和国信息安全法》B、《中华人民共和国电信条例》C、《中华人民共和国计算机信息系统安全保护条例》D、《中华人民共和国个人信息保护法》	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1025]" rel="1025" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1025]" rel="1025" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1025]" rel="1025" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1025]" rel="1025" value="D" />D </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1025]" rel="1025" value="E" />E </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(5);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(7);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_994" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第8题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('994');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('994',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_994">
+								<input id="time_994" type="hidden" name="time[994]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>网络运营者未要求用户实名的，最高可处罚款（）。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A5万B10万C50万	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[994]" rel="994" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[994]" rel="994" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[994]" rel="994" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[994]" rel="994" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(6);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(8);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1032" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第9题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1032');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1032',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1032">
+								<input id="time_1032" type="hidden" name="time[1032]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>2014年2月27日，中共中央总书记、国家主席、中央军委主席、中央网络安全和信息化领导小组组长习近平2月27日下午主持召开中央网络安全和信息化领导小组第一次会议并发表重要讲话。他强调，_______和_____是事关国家安全和国家发展、事关广大人民群众工作生活的重大战略问题。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A信息安全、信息化B网络安全、信息化C网络安全、信息安全D安全、发展	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1032]" rel="1032" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1032]" rel="1032" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1032]" rel="1032" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1032]" rel="1032" value="D" />D </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1032]" rel="1032" value="E" />E </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(7);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(9);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1030" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第10题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1030');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1030',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1030">
+								<input id="time_1030" type="hidden" name="time[1030]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a><p>网络安全法中网络运行安全规定， 实行网络安全等级保护制度。</p>						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	<p>A.人民 B.政府 C.国家</p>	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1030]" rel="1030" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1030]" rel="1030" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1030]" rel="1030" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1030]" rel="1030" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(8);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(10);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_984" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第11题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('984');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('984',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_984">
+								<input id="time_984" type="hidden" name="time[984]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a><p>我国第一部网络安全基础性法律是（）。</p>						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	<p>A《反恐怖主义法》B《网络安全法》C《国家安全法》</p>	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[984]" rel="984" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[984]" rel="984" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[984]" rel="984" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[984]" rel="984" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(9);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(11);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_987" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第12题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('987');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('987',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_987">
+								<input id="time_987" type="hidden" name="time[987]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>QQ聊天记录不被非法调取，是《网络安全法》维护网络数据的（）功能。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A完整性B可用性C保密性	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[987]" rel="987" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[987]" rel="987" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[987]" rel="987" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[987]" rel="987" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(10);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(12);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1011" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第13题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1011');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1011',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1011">
+								<input id="time_1011" type="hidden" name="time[1011]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>违反《网络安全法》规定，给他人造成损害的，依法（ ）。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、给予治安管理处罚B、承担民事责任C、追究刑事责任	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1011]" rel="1011" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1011]" rel="1011" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1011]" rel="1011" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1011]" rel="1011" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(11);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(13);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_993" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第14题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('993');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('993',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_993">
+								<input id="time_993" type="hidden" name="time[993]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>（）按照规定统一发布网络安全监测预警信息。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A公安机关B电信部门C网信部门	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[993]" rel="993" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[993]" rel="993" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[993]" rel="993" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[993]" rel="993" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(12);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(14);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1004" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第15题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1004');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1004',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1004">
+								<input id="time_1004" type="hidden" name="time[1004]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>国务院电信主管部门、公安部门和其他有关机关依照本法和有关法律法规的规定，在各自职责范围内负责网络安全（ ）工作						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、监测、防御、处置B、保护和监督管理C、推广	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1004]" rel="1004" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1004]" rel="1004" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1004]" rel="1004" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1004]" rel="1004" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(13);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(15);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1022" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第16题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1022');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1022',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1022">
+								<input id="time_1022" type="hidden" name="time[1022]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>为了规范互联网电子邮件服务，依法治理垃圾电子邮件问题，保障互联网电子邮件用户的合法权益，信息产业部于2006年2月20日颁布了，自2006年3月30日开始施行。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、《互联网信息服务管理办法》 B、《互联网电子邮件服务管理办法》 C、《互联网电子公告服务管理规定》	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1022]" rel="1022" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1022]" rel="1022" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1022]" rel="1022" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1022]" rel="1022" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(14);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(16);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1028" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第17题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1028');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1028',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1028">
+								<input id="time_1028" type="hidden" name="time[1028]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>下列关于我国涉及网络信息安全的法律说法正确的是（ ）						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、在1979年的刑法中已经包含相关的计算机犯罪的罪名B、《关于维护互联网安全的决定》是我国目前为止直接规范网络信息安全的效力最高的法律文件C、2003年全国人大常委会审核通过了《中华人民共和国电子签名法》D、《中华人民共和国电子签名法》的实施年份是2004年	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1028]" rel="1028" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1028]" rel="1028" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1028]" rel="1028" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1028]" rel="1028" value="D" />D </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1028]" rel="1028" value="E" />E </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(15);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(17);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_999" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第18题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('999');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('999',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_999">
+								<input id="time_999" type="hidden" name="time[999]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>非法出售个人信息尚不构成犯罪的，没收违法所得，并处违法所得（）罚款。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A 一倍以上三倍以下B 一倍以上五倍以下C 一倍以上十倍以下	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[999]" rel="999" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[999]" rel="999" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[999]" rel="999" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[999]" rel="999" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(16);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(18);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1035" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第19题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1035');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1035',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1035">
+								<input id="time_1035" type="hidden" name="time[1035]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>2016年4月19日，习近平总书记在网络安全和信息化工作座谈会上指出，“互联网核心技术是我们最大的‘命门’，______是我们最大的隐患”。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A核心技术受制于人B核心技术没有完全掌握C网络安全技术受制于人D网络安全技术没有完全掌握	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1035]" rel="1035" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1035]" rel="1035" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1035]" rel="1035" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1035]" rel="1035" value="D" />D </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1035]" rel="1035" value="E" />E </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(17);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(19);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1024" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第20题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1024');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1024',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1024">
+								<input id="time_1024" type="hidden" name="time[1024]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>为了依法加强对通信短信息服务和使用行为的监管，信息产业部和有关部门正在联合制定_____						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、《通信服务管理办法》 B、《通信短信息服务管理规定》 C、《短信息管理条例》	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1024]" rel="1024" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1024]" rel="1024" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1024]" rel="1024" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1024]" rel="1024" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(18);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(20);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_992" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第21题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('992');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('992',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_992">
+								<input id="time_992" type="hidden" name="time[992]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>下列叙述错误的是（）。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A任何个人和组织不得窃取个人信息B任何个人和组织不得出售个人信息C任何个人和组织不得调取个人信息	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[992]" rel="992" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[992]" rel="992" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[992]" rel="992" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[992]" rel="992" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(19);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(21);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_1007" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第22题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('1007');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('1007',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_1007">
+								<input id="time_1007" type="hidden" name="time[1007]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>《非经营性互联网信息服务备案管理办法》规定，互联网接入服务提供者(ISP)不得为未经备案的组织或个人从事非经营性互联网信息服务提供。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A、电子邮件服务 B、互联网接入服务 C、代为备案服务	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1007]" rel="1007" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1007]" rel="1007" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1007]" rel="1007" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[1007]" rel="1007" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(20);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(22);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_997" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第23题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('997');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('997',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_997">
+								<input id="time_997" type="hidden" name="time[997]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>《网络安全法》规定的网络运营者，不包括（）。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A网络所有者B网络管理者C网络应用开发商	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[997]" rel="997" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[997]" rel="997" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[997]" rel="997" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[997]" rel="997" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(21);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(23);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_998" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第24题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('998');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('998',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_998">
+								<input id="time_998" type="hidden" name="time[998]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>设立用于实施违法犯罪活动的网站、通讯群组，由（）作为执法主体予以关闭。						</div>
+																		<div class="choice" style="padding-bottom:0.5rem;">
+	                    	A网信办B公安局C通管局	                    </div>
+	                    						<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[998]" rel="998" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[998]" rel="998" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[998]" rel="998" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[998]" rel="998" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(22);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																					<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(24);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+													</div>
+					</div>
+						                	                					<div class="paperexamcontent" id="questions_986" rel="1" style="clear:both;overflow:hidden;background:#FFFFFF;margin-top:0.5rem;padding:1rem;">
+						<!--
+						<h4 class="title">
+							第25题
+							<span class="pull-right">
+								<a class="btn text-primary qicon" onclick="javascript:favorquestion('986');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+								<a class="btn text-info qicon" href="javascript:;" onclick="javascript:signQuestion('986',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+								<a name="question_986">
+								<input id="time_986" type="hidden" name="time[986]"/>
+							</span>
+						</h4>-->
+						<div class="choice">
+							</a>（）负责统筹协调全国网络安全工作和相关监督管理工作。                                                                         A国信办（中央网信办）B工信部C公安部						</div>
+																		<div class="selector">
+	                    			                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[986]" rel="986" value="A" />A </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[986]" rel="986" value="B" />B </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[986]" rel="986" value="C" />C </label>
+		                        		                        		                        <label class="radio-inline" style="line-height:2.8rem;"><input type="radio" name="question[986]" rel="986" value="D" />D </label>
+		                        		                        		                        		                    	                    </div>
+												<div class="toolbar" style="padding:1rem 0.5rem;">
+														<a class="btn btn-default" onclick="javascript:gotoindexquestion(23);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																				</div>
+					</div>
+																																																																																														</form>
+			</div>
+		</div>
+		<div class="container-fluid text-center" style="background-color:#337AB7;z-index:9999;position:fixed;bottom:0px;border-top:1px solid #E9E9E9;">
+			<div style="clear:both;background-color:#337AB7;padding-top:0px;border:0px;padding:0rem;padding-bottom:0.8rem;" class="input-group-addon footer">
+				<div class="col-xs-3">
+					<div class="text-center" style="height:4.2rem;padding:0.2rem;">
+						<a href="javascript:;" onclick="javascript:$.leftMenu($('#questionbar'));$('#form1').toggle();">
+							<h5 style="line-height:3.2rem;color:#FFFFFF;"><em class="glyphicon glyphicon-th"></em> 题序</h5>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="text-center" style="height:4.2rem;padding:0.2rem;">
+						<a href="index.php?item-phone-cart" class="ajax" data-page="cart" data-target="cart">
+							<h4 style="line-height:3.2rem;color:#FFFFFF;"><em class="glyphicon glyphicon-time"></em> <span id="timer_h">00</span><span>：</span><span id="timer_m">00</span><span>：</span><span id="timer_s">00</span></h4>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="text-center" style="height:4.2rem;padding:0.2rem;">
+						<a href="#submodal" role="button" data-toggle="modal">
+							<h5 style="line-height:3.2rem;color:#FFFFFF;"><em class="glyphicon glyphicon-list-alt"></em> 交卷</h5>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="submodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">交卷</h4>
+					</div>
+					<div class="modal-body">
+						<p>共有试题 <span class="allquestionnumber">50</span> 题，已做 <span class="yesdonumber">0</span> 题。您确认要交卷吗？</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" onclick="javascript:submitPaper();" class="btn btn-primary">确定交卷</button>
+						<button aria-hidden="true" class="btn" type="button" data-dismiss="modal">再检查一下</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var qindex = 0;
+		function gotoquestion(questid)
+		{
+			$(".questionpanel").hide();
+			$(".paperexamcontent").hide();
+			$("#questions_"+questid).show();
+			$("#questype_"+$("#questions_"+questid).attr('rel')).show();
+		}
+		function gotoindexquestion(index)
+		{
+			$(".questionpanel").hide();
+			$(".paperexamcontent").hide();
+			$(".paperexamcontent").eq(index).show();
+			$("#questype_"+$(".paperexamcontent").eq(index).attr('rel')).show();
+		}
+		$(document).ready(function(){
+			$.get('index.php?exam-phone-index-ajax-lefttime&rand'+Math.random(),function(data){
+				var setting = {
+					time:40,
+					hbox:$("#timer_h"),
+					mbox:$("#timer_m"),
+					sbox:$("#timer_s"),
+					finish:function(){
+						submitPaper();
+					}
+				}
+				setting.lefttime = parseInt(data);
+				countdown(setting);
+			});
+
+			(function(){
+				$(".questionpanel").hide();
+				$(".questionpanel:first").show();
+				$(".paperexamcontent").hide();
+				$(".paperexamcontent:first").show();
+			})();
+
+			setInterval(saveanswer,120000);
+
+			initData = $.parseJSON(storage.getItem('questions'));
+			if(initData){
+				for(var p in initData){
+					if(p!='set')
+					formData[p]=initData[p];
+					$("#time_"+$('[name="'+p+'"]').attr('rel')).val(initData[p].time);
+				}
+
+				var textarea = $('#form1 textarea');
+				$.each(textarea,function(){
+					var _this = $(this);
+					if(initData[_this.attr('name')])
+					{
+						_this.val(initData[_this.attr('name')].value);
+						batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+					}
+				});
+				var texts = $('#form1 :input[type=text]');
+				$.each(texts,function(){
+					var _this = $(this);
+					if(initData[_this.attr('name')])
+					{
+						_this.val(initData[_this.attr('name')]?initData[_this.attr('name')].value:'');
+						if(initData[_this.attr('name')].value && initData[_this.attr('name')].value != '')
+						batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+					}
+				});
+
+				var radios = $('#form1 :input[type=radio]');
+				$.each(radios,function(){
+					var _= this, v = initData[_.name]?initData[_.name].value:null;
+					var _this = $(this);
+					if(v!=''&&v==_.value){
+						_.checked = true;
+						batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+					}else{
+						_.checked=false;
+					}
+				});
+
+				var checkboxs=$('#form1 :input[type=checkbox]');
+				$.each(checkboxs,function(){
+					var _=this,v=initData[_.name]?initData[_.name].value:null;
+					var _this = $(this);
+					if(v!=''&&v==_.value){
+						_.checked=true;
+						batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+					}else{
+						_.checked=false;
+					}
+				});
+			}
+
+			$('#form1 :input[type=text]').change(function(){
+				var _this=$(this);
+				var p=[];
+				p.push(_this.attr('name'));
+				p.push(_this.val());
+				p.push(Date.parse(new Date())/1000);
+				$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+				set.apply(formData,p);
+				markQuestion(_this.attr('rel'),true);
+			});
+
+			$('#form1 :input[type=radio]').change(function(){
+				var _=this;
+				var _this=$(this);
+				var p=[];
+				p.push(_.name);
+				if(_.checked){
+					p.push(_.value);
+					p.push(Date.parse(new Date())/1000);
+					$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+					set.apply(formData,p);
+				}else{
+					p.push('');
+					p.push(null);
+					set.apply(formData,p);
+				}
+				markQuestion(_this.attr('rel'));
+			});
+
+			$('#form1 textarea').change(function(){
+				var _= this;
+				var _this=$(this);
+				var p=[];
+				p.push(_.name);
+				p.push(_.value);
+				p.push(Date.parse(new Date())/1000);
+				$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+				set.apply(formData,p);
+				markQuestion(_this.attr('rel'),true);
+			});
+			$('#form1 :input[type=checkbox]').change(function(){
+				var _= this;
+				var _this = $(this);
+				var p=[];
+				p.push(_.name);
+				if(_.checked){
+					p.push(_.value);
+					p.push(Date.parse(new Date())/1000);
+					$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+					set.apply(formData,p);
+				}else{
+					p.push('');
+					p.push(null);
+					set.apply(formData,p);
+				}
+				markQuestion(_this.attr('rel'));
+			});
+			$('.allquestionnumber').html($('.paperexamcontent').length);
+			$('.yesdonumber').html($('#questionindex .btn-primary').length);
+		});
+		</script>
+	    </div>
+</div>
+</body>
+</html>
